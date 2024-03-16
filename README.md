@@ -1,6 +1,9 @@
-Arduino sketch which reads from and writes to a CAN Bus using an MCP2515 interface and the MCP_CAN_lib (https://github.com/Longan-Labs/Arduino_CAN_BUS_MCP2515)
+Arduino sketch which reads from and writes to a CAN Bus using an MCP2515 interface
+
+This sketch depends upon the the MCP_CAN_lib (https://github.com/Longan-Labs/Arduino_CAN_BUS_MCP2515)
  
-By default, the sketch's loop simply checks to see if there is a message waiting to be read from the interface and prints it, if there is one.
+By default, the sketch's loop simply checks to see if there is a message waiting to be read from the interface and prints it, if there is one. 
+
 The sketch goes further in several ways:
  
 1. Individual CAN messages can be easily composed on the inbound Serial stream and sent out via CAN. If using the Arduino IDE, you can simply type
@@ -16,7 +19,10 @@ The sketch goes further in several ways:
    can begin a capture through the sketch and prime it with all the chatter associated with the CAN Bus at startup, clear the output log, then
    initiate the function under investigation. The resulting message log will then show the messages triggered by the function with decent suppression 
    of much of the normal background chatter on an active bus.  Note that the message history cache can be reset by sending the string "CLEAR" to
-   the Serial stream
+   the Serial stream.
+
+The code and its operation is best understood by reading the extensive comments in the sketch. The CANBus commands embedded in the sketch are specific 
+to one particular vehicle and are provided for illustration only.
 
 *** NOTE: NAIVELY INTERACTING WITH YOUR VEHICLE'S CANBUS IS AN INHERENTLY RISKY ACTIVITY THAT COULD RESULT IN MATERIAL HARM TO YOUR VEHICLE. YOUR DECISION
 TO DO SO, WITH OR WITHOUT THIS CODE, IS ENTIRELY YOUR OWN AND NO WARRANTY, RESPONSIBITY OR COMMITTMENT TO SUPPORT IS IMPLIED.  
